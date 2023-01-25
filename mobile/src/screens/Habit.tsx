@@ -59,10 +59,20 @@ export function Habit() {
   }
 
   async function handleToogleHabit(habitId: string) {
-    if(completedHabits.includes(habitId)) {
-      setCompletedHabits(prevState => prevState.filter(habit => habit !== habitId));
-    } else {
-      setCompletedHabits(prevState => [...prevState, habitId]);
+    try {
+        await api.patch(`/habits/${habitId}/toggle`);
+        
+        if(completedHabits.includes(habitId)) {
+        setCompletedHabits(prevState => prevState.filter(habit => habit !== habitId));
+      } else {
+        setCompletedHabits(prevState => [...prevState, habitId]);
+      }
+    } catch (error) { 
+      console.error(error);
+      Alert.alert('Ops', 'Não foi possível carregar as informações dos haábitos.')
+    }
+    finally {
+      setLoading(false);
     }
   }
 
