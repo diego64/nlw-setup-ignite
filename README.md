@@ -9,7 +9,7 @@
 <br>
 <br>
 
-# Habitto.life 💪
+# Habits 💪
 
 ## 🧪 Technologies
 
@@ -46,17 +46,6 @@ $ cd nlw-setup-ignite
 
 Follow the steps below:
 
-### Web
-
-```bash
-# Install the web dependencies
-$ cd web
-$ npm install
-
-# Start the web project
-$ npm start
-```
-
 ### Server
 
 ```bash
@@ -67,6 +56,17 @@ $ npm install
 # Start the server project
 $ npx prisma migrate deploy
 $ npm run dev
+```
+
+### Web
+
+```bash
+# Install the web dependencies
+$ cd web
+$ npm install
+
+# Start the web project
+$ npm start
 ```
 
 ### Mobile
